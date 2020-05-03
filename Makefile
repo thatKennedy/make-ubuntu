@@ -1,9 +1,11 @@
 # Assumes minimal install ofUbuntu
 # non-CLI taks: Livepatch, GDrive/Google sync, add Canonical Partner PPA, select driver for GPU
 
-standard:
-	update utils tweaks python chrome gcloud pycharm spotify postman libre sublime vlc
-	# synapitc firewall timeshift
+standard: \
+ update utils tweaks python pycharm\
+ chrome gcloud spotify postman\
+ libre sublime vlc powerstat laptop-mode\
+ firewall timeshift synapitc
 
 update:
 	sudo apt-get update && sudo apt upgrade -y
@@ -42,7 +44,7 @@ gcloud:
 
 
 pycharm:
-	sudo snap install pycharm-community
+	sudo snap install pycharm-community --classic
 
 spotify:
 	sudo snap install spotify
@@ -73,9 +75,6 @@ vlc:
 codecs: # make sure to use tab to select OK 
 	sudo apt install ubuntu-restricted-extras -y
 
-synaptic:
-	sudo apt install synaptic -y
-
 firewall:
 	sudo apt-get install gufw
 	sudo ufw enable
@@ -85,5 +84,11 @@ timeshift:
 	sudo apt update
 	sudo apt install timeshift -y
 
-laptop:
+powerstat:
+	sudo snap install powerstat
+
+laptop-mode: # run with sudo lmt-config-gui
 	sudo apt install laptop-mode-tools
+
+synaptic:
+	sudo apt install synaptic -y
