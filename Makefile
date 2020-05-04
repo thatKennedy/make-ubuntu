@@ -1,9 +1,11 @@
 # Assumes minimal install ofUbuntu
 # non-CLI taks: Livepatch, GDrive/Google sync, add Canonical Partner PPA, select driver for GPU
+# display scale for screen size
+
 
 standard: \
  update utils tweaks python pycharm\
- chrome gcloud spotify postman\
+ chrome gcloud spotify postman joplin\
  libre sublime vlc powerstat laptop-mode\
  firewall timeshift synapitc
 
@@ -45,6 +47,9 @@ gcloud:
 
 pycharm:
 	sudo snap install pycharm-community --classic
+
+joplin:
+	wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh | bash
 
 spotify:
 	sudo snap install spotify
