@@ -1,5 +1,6 @@
 # Assumes minimal install ofUbuntu
 # non-CLI taks: Livepatch, GDrive/Google sync, add Canonical Partner PPA, select driver for GPU
+# install Dropbox
 # display scale for screen size
 
 
