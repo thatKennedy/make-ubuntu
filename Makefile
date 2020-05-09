@@ -22,9 +22,10 @@ python: update
 	# install pipx for running python modules as CLI tools (i.e. black/poetry)
 	python3 -m pip install -U pipx
 	python3 -m pipx ensurepath
-	# install poetry as python package manager
+	# need to restart terminal session for pipx to catch
 
 pipx:
+	# install poetry as python package manager
 	pipx install poetry
 	# install jupyter as notebook IDE
 	pipx install jupyterlab --include-deps
