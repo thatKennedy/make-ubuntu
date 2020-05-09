@@ -1,4 +1,4 @@
-# Assumes minimal install ofUbuntu
+# Assumes minimal install of Ubuntu 20.04
 # non-CLI taks: Livepatch, GDrive/Google sync, add Canonical Partner PPA, select driver for GPU
 # install Dropbox
 # display scale for screen size
@@ -14,13 +14,15 @@ update:
 	sudo apt-get update && sudo apt upgrade
 
 utils: update
-	sudo apt-get install build-essential curl git
+	sudo apt-get install build-essential\
+	libssl-dev libffi-dev python3-dev\
+	curl git -y
 
 tweaks:
-	sudo apt install gnome-tweak-tool
+	sudo apt install gnome-tweak-tool -y
 
 python: update
-	sudo apt-get install python3 python3-pip python3-venv
+	sudo apt-get install python3-pip python3-venv -y
 	# install pipx for running python modules as CLI tools (i.e. black/poetry)
 	python3 -m pip install -U pipx
 	python3 -m pipx ensurepath
