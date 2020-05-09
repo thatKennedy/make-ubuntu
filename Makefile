@@ -3,6 +3,8 @@
 # install Dropbox
 # display scale for screen size
 
+# make sure to
+# sudo apt install make 
 
 standard: \
  update utils tweaks python pycharm\
@@ -11,7 +13,7 @@ standard: \
  firewall timeshift synapitc
 
 update:
-	sudo apt-get update && sudo apt upgrade
+	sudo apt-get update -y && sudo apt upgrade -y
 
 utils: update
 	sudo apt-get install build-essential\
