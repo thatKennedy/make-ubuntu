@@ -11,16 +11,16 @@ standard: \
  firewall timeshift synapitc
 
 update:
-	sudo apt-get update && sudo apt upgrade -y
+	sudo apt-get update && sudo apt upgrade
 
 utils: update
 	sudo apt-get install build-essential curl git
 
 tweaks:
-	sudo apt install gnome-tweak-tool -y
+	sudo apt install gnome-tweak-tool
 
 python: update
-	sudo apt-get install python3 python3-venv
+	sudo apt-get install python3 python3-pip python3-venv
 	# install pipx for running python modules as CLI tools (i.e. black/poetry)
 	python3 -m pip install -U pipx
 	python3 -m pipx ensurepath
