@@ -6,6 +6,12 @@
 # make sure to
 # sudo apt install make git
 
+
+git:
+	sudo apt install make git
+	git config --global user.email "j@thatkennedy.net"
+	git config --global user.name "thatkennedy"
+
 update:
 	sudo apt-get update && sudo apt upgrade
 
@@ -46,6 +52,9 @@ gcloud:
 	# Update the package list and install the Cloud SDK
 	sudo apt-get update && sudo apt-get install google-cloud-sdk# gcloud init
 
+
+gparted:
+	sudo apt-get install gparted -y
 
 pycharm:
 	sudo snap install pycharm-community --classic
