@@ -9,16 +9,19 @@
 update:
 	sudo apt-get update && sudo apt upgrade
 
+git:
+	suod apt install git
+
 utils: update
-	sudo apt-get install build-essential\
-	libssl-dev libffi-dev python3-dev\
-	curl git -y
+	sudo apt-get install build-essential \
+	libssl-dev libffi-dev \
+	curl -y
 
 tweaks:
 	sudo apt install gnome-tweak-tool -y
 
 python: update
-	sudo apt-get install python3-pip python3-venv -y
+	sudo apt-get install python3-pip python3-venv python3-dev -y
 	# install pipx for running python modules as CLI tools (i.e. black/poetry)
 	python3 -m pip install -U pipx
 	python3 -m pipx ensurepath
