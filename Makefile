@@ -7,7 +7,7 @@
 # sudo apt install make 
 
 update:
-	sudo apt-get update -y && sudo apt upgrade -y
+	sudo apt-get update && sudo apt upgrade
 
 utils: update
 	sudo apt-get install build-essential\
@@ -69,9 +69,9 @@ sublime:
 	sudo snap install sublime-text --classic
 
 steam: 
-	sudo add-apt-repository multiverse
+	sudo add-apt-repository multiverse -y
 	sudo apt update
-	sudo apt install steam
+	sudo apt install steam -y 
 
 docker:
 
@@ -88,7 +88,7 @@ firewall:
 
 timeshift:
 	sudo apt-add-repository -y ppa:teejee2008/ppa
-	sudo apt update
+	sudo apt update 
 	sudo apt install timeshift -y
 
 powerstat:
