@@ -4,13 +4,10 @@
 # display scale for screen size
 
 # make sure to
-# sudo apt install make 
+# sudo apt install make git
 
 update:
 	sudo apt-get update && sudo apt upgrade
-
-git:
-	suod apt install git
 
 utils: update
 	sudo apt-get install build-essential \
