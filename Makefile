@@ -6,12 +6,6 @@
 # make sure to
 # sudo apt install make 
 
-standard: \
- update utils tweaks python pycharm\
- chrome gcloud spotify postman joplin\
- libre sublime vlc powerstat laptop-mode\
- firewall timeshift synapitc
-
 update:
 	sudo apt-get update -y && sudo apt upgrade -y
 
@@ -29,6 +23,8 @@ python: update
 	python3 -m pip install -U pipx
 	python3 -m pipx ensurepath
 	# install poetry as python package manager
+
+pipx:
 	pipx install poetry
 	# install jupyter as notebook IDE
 	pipx install jupyterlab --include-deps
