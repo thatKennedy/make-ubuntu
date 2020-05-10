@@ -52,6 +52,9 @@ gcloud:
 	# Update the package list and install the Cloud SDK
 	sudo apt-get update && sudo apt-get install google-cloud-sdk# gcloud init
 
+# for burning iso's to usb drives
+usb-creator:
+	sudo apt-get install usb-creator-gtk
 
 gparted:
 	sudo apt-get install gparted -y
