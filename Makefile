@@ -30,7 +30,7 @@ python: update
 	python3 -m pipx ensurepath
 	# need to restart terminal session for pipx to catch
 
-pipx:
+pipx_tools:
 	# install poetry as python package manager
 	pipx install poetry
 	# install jupyter as notebook IDE
@@ -86,16 +86,29 @@ steam:
 	sudo apt install steam -y 
 
 # not the stable version for the registry is specifically set to bionic as focal isn't available
-docker: #sudo apt-get remove docker docker-engine docker.io containerd runc
+docker_bionic: #sudo apt-get remove docker docker-engine docker.io containerd runc
 	sudo apt-get install apt-transport-https ca-certificates gnupg-agent software-properties-common
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 	sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 	sudo apt-get install docker-ce docker-ce-cli containerd.io
 
+# this isn't working right now...
+docker_user:
+	#sudo groupadd docker
+	sudo usermod -aG docker $(USER)
+
 purge_docker:
 	sudo apt-get purge docker-ce docker-ce-cli containerd.io
 	sudo rm -rf /var/lib/docker
+
+
+OS=Linux# uname -s
+ARCH=x86_64# uname -m
+make docker_compose:
+	# install docker compose 
+	sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(OS)-$(ARCH)" -o /usr/local/bin/docker-compose
+	sudo chmod +x /usr/local/bin/docker-compose
 
 vlc:
 	sudo snap install vlc
