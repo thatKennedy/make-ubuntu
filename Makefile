@@ -93,7 +93,6 @@ docker_bionic: #sudo apt-get remove docker docker-engine docker.io containerd ru
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 	sudo apt-get install docker-ce docker-ce-cli containerd.io
 
-# this isn't working right now...
 docker_user:
 	#sudo groupadd docker
 	sudo usermod -aG docker $(USER)
@@ -133,3 +132,6 @@ laptop-mode: # run with sudo lmt-config-gui
 
 synaptic:
 	sudo apt install synaptic -y
+
+gimp:
+	sudo snap install gimp
