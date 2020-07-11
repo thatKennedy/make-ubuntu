@@ -13,7 +13,10 @@ git:
 	git config --global user.name "thatkennedy"
 
 update:
-	sudo apt-get update && sudo apt upgrade
+	sudo apt-get update 
+
+upgrade: update
+	sudo apt upgrade
 
 utils: update
 	sudo apt-get install build-essential \
@@ -23,7 +26,7 @@ utils: update
 tweaks:
 	sudo apt install gnome-tweak-tool -y
 
-python: update
+python: upgrade
 	sudo apt-get install python3-pip python3-venv python3-dev -y
 	# install pipx for running python modules as CLI tools (i.e. black/poetry)
 	python3 -m pip install -U pipx
@@ -135,3 +138,9 @@ synaptic:
 
 gimp:
 	sudo snap install gimp
+
+pdf_viewer:
+	sudo apt-get install okular
+
+psql_client: update
+	sudo apt-get install postgresql-client
