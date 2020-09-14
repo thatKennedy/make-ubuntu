@@ -146,3 +146,6 @@ pdf_viewer:
 
 psql_client: update
 	sudo apt-get install postgresql-client
+
+freecad:
+	sudo apt-get install freecad
