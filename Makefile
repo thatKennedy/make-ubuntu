@@ -23,6 +23,10 @@ utils: update
 	libssl-dev libffi-dev \
 	curl -y
 
+fprint:
+	sudo apt install -y fprintd libpam-fprintd
+	sudo pam-auth-update
+
 tweaks:
 	sudo apt install gnome-tweak-tool -y
 
