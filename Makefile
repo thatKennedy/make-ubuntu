@@ -14,6 +14,11 @@ git:
 	git config --global user.email "j@thatkennedy.net"
 	git config --global user.name "thatkennedy"
 
+ssh-server: update
+	sudo apt install openssh-server
+	sudo systemctl status ssh
+	sudo ufw allow ssh
+
 update:
 	sudo apt-get update 
 
