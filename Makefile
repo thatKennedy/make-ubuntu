@@ -149,7 +149,7 @@ timeshift:
 powerstat:
 	sudo snap install powerstat
 
-laptop-mode: # run with sudo lmt-config-gui
+laptop-mode:
 	sudo apt install laptop-mode-tools
 
 synaptic:
