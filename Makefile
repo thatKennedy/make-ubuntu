@@ -10,7 +10,7 @@
 
 
 git:
-	sudo apt install make git
+	sudo apt install git
 	git config --global user.email "j@thatkennedy.net"
 	git config --global user.name "thatkennedy"
 
