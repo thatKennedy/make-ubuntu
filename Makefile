@@ -8,7 +8,10 @@
 
 # TODO: pin versions where possible
 
-
+dirs:
+	mkdir ~/Downloads
+	mkdir ~/Programs
+	mkdir ~/Repos
 
 update:
 	sudo apt-get update 
@@ -24,13 +27,16 @@ git:
 utils: update
 	sudo apt-get install build-essential \
 	libssl-dev libffi-dev \
-	curl -y
+	curl  software-properties-common -y
 
-python: upgrade
-	sudo apt-get install python3-pip python3-venv python3-dev -y
+python38: 
+	sudo apt update
+	sudo apt install python3.8 python3.8-distutils python3.8-venv
+	curl https://bootstrap.pypa.io/get-pip.py -o ~/Downloads/get-pip.py
+	python3.8 ~/Downloads/get-pip.py
 	# install pipx for running python modules as CLI tools (i.e. black/poetry)
-	python3 -m pip install -U pipx
-	python3 -m pipx ensurepath
+	python3.8 -m pip install -U pipx
+	python3.8 -m pipx ensurepath
 	# need to restart terminal session for pipx to catch
 
 pipx_tools:
