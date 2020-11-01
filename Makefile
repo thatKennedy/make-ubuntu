@@ -27,7 +27,7 @@ git:
 utils: update
 	sudo apt-get install build-essential \
 	libssl-dev libffi-dev \
-	curl  software-properties-common -y
+	curl  software-properties-common unzip -y
 
 python38: 
 	sudo apt update
@@ -54,6 +54,15 @@ minizinc:
 	# export PATH="$PATH:$MZPATH/bin"
 	# export LD_LIBRARY_PATH=$MZPATH/lib:$LD_LIBRARY_PATH
 	# export QT_PLUGIN_PATH=$MZPATH/plugins:$QT_PLUGIN_PATH
+
+# https://github.com/balena-io/balena-cli/blob/master/INSTALL-ADVANCED.md
+# https://github.com/balena-io/balena-cli/blob/master/INSTALL-LINUX.md
+balena: 
+	wget https://github.com/balena-io/balena-cli/releases/download/v12.26.1/balena-cli-v12.26.1-linux-x64-standalone.zip -P ~/Downloads/
+	unzip ~/Downloads/balena-cli-v12.26.1-linux-x64-standalone.zip -d ~/Programs
+	# still need to add the following to .bashrc
+	# export BALENAPATH=~/Programs/balena-cli/
+	# export PATH="$PATH:$BALENAPATH/"
 
 brave:
 	sudo apt install apt-transport-https curl
