@@ -4,7 +4,7 @@
 # display scale for screen size
 
 # make sure to
-# sudo apt install make git
+# sudo apt install make
 
 # TODO: pin versions where possible
 
@@ -29,6 +29,13 @@ utils: update
 	sudo apt-get install build-essential \
 	libssl-dev libffi-dev \
 	curl -y
+
+minizinc:
+	cd ~/Downloads
+	wget https://github.com/MiniZinc/MiniZincIDE/releases/download/2.5.1/MiniZincIDE-2.5.1-bundle-linux-x86_64.tgz -P ~/Downloads/
+	tar -xvzf ~/Downloads/MiniZincIDE-2.5.1-bundle-linux-x86_64.tgz -C ~/Programs
+	# still need to add the following to .bashrc
+	# export PATH="$PATH:~/Programs/MiniZincIDE-2.5.1-bundle-linux-x86_64/bin"
 
 brave:
 	sudo apt install apt-transport-https curl
