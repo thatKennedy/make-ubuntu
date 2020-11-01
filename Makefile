@@ -35,7 +35,10 @@ minizinc:
 	wget https://github.com/MiniZinc/MiniZincIDE/releases/download/2.5.1/MiniZincIDE-2.5.1-bundle-linux-x86_64.tgz -P ~/Downloads/
 	tar -xvzf ~/Downloads/MiniZincIDE-2.5.1-bundle-linux-x86_64.tgz -C ~/Programs
 	# still need to add the following to .bashrc
-	# export PATH="$PATH:~/Programs/MiniZincIDE-2.5.1-bundle-linux-x86_64/bin"
+	# export MZPATH=~/Programs/MiniZincIDE-2.5.1-bundle-linux-x86_64
+	# export PATH="$PATH:$MZPATH/bin"
+	# export LD_LIBRARY_PATH=$MZPATH/lib:$LD_LIBRARY_PATH
+	# export QT_PLUGIN_PATH=$MZPATH/plugins:$QT_PLUGIN_PATH
 
 brave:
 	sudo apt install apt-transport-https curl
