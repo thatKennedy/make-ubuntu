@@ -9,15 +9,6 @@
 # TODO: pin versions where possible
 
 
-git:
-	sudo apt install git
-	git config --global user.email "j@thatkennedy.net"
-	git config --global user.name "thatkennedy"
-
-ssh-server: update
-	sudo apt install openssh-server
-	sudo systemctl status ssh
-	sudo ufw allow ssh
 
 update:
 	sudo apt-get update 
@@ -25,10 +16,28 @@ update:
 upgrade: update
 	sudo apt upgrade
 
+git:
+	sudo apt install git
+	git config --global user.email "j@thatkennedy.net"
+	git config --global user.name "thatkennedy"
+
 utils: update
 	sudo apt-get install build-essential \
 	libssl-dev libffi-dev \
 	curl -y
+
+python: upgrade
+	sudo apt-get install python3-pip python3-venv python3-dev -y
+	# install pipx for running python modules as CLI tools (i.e. black/poetry)
+	python3 -m pip install -U pipx
+	python3 -m pipx ensurepath
+	# need to restart terminal session for pipx to catch
+
+pipx_tools:
+	# install poetry as python package manager
+	pipx install 'poetry==1.1.3'
+	# install jupyter as notebook IDE
+	pipx install jupyterlab --include-deps
 
 minizinc:
 	cd ~/Downloads
@@ -47,24 +56,16 @@ brave:
 	sudo apt update
 	sudo apt install brave-browser
 
+ssh-server: update
+	sudo apt install openssh-server
+	sudo systemctl status ssh
+	sudo ufw allow ssh
+
 grubber:
 	sudo apt install grub-customizer
 
 tweaks:
 	sudo apt install gnome-tweak-tool -y
-
-python: upgrade
-	sudo apt-get install python3-pip python3-venv python3-dev -y
-	# install pipx for running python modules as CLI tools (i.e. black/poetry)
-	python3 -m pip install -U pipx
-	python3 -m pipx ensurepath
-	# need to restart terminal session for pipx to catch
-
-pipx_tools:
-	# install poetry as python package manager
-	pipx install 'poetry==1.1.3'
-	# install jupyter as notebook IDE
-	pipx install jupyterlab --include-deps
 
 chrome: 
 	cd ~/Downloads
