@@ -30,12 +30,6 @@ utils: update
 	libssl-dev libffi-dev \
 	curl -y
 
-gh:
-	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-	sudo apt-add-repository https://cli.github.com/packages
-	sudo apt update
-	sudo apt install gh
-
 minizinc:
 	cd ~/Downloads
 	wget https://github.com/MiniZinc/MiniZincIDE/releases/download/2.5.1/MiniZincIDE-2.5.1-bundle-linux-x86_64.tgz -P ~/Downloads/
