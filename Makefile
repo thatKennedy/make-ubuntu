@@ -44,6 +44,7 @@ pipx_tools:
 	pipx install 'poetry==1.1.3'
 	# install jupyter as notebook IDE
 	pipx install jupyterlab --include-deps
+	pipx install nbstripout
 
 minizinc:
 	cd ~/Downloads
