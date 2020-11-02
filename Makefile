@@ -46,6 +46,9 @@ pipx_tools:
 	pipx install jupyterlab --include-deps
 	pipx install nbstripout
 
+graphviz:
+	sudo apt install graphviz
+
 minizinc:
 	cd ~/Downloads
 	wget https://github.com/MiniZinc/MiniZincIDE/releases/download/2.5.1/MiniZincIDE-2.5.1-bundle-linux-x86_64.tgz -P ~/Downloads/
