@@ -46,8 +46,15 @@ pipx_tools:
 	pipx install jupyterlab --include-deps
 	pipx install nbstripout
 
+GECODE = ~/Programs/gecode
+gecode:
+	git clone https://github.com/Gecode/gecode $(GECODE)
+	mkdir $(GECODE)/build
+	cd $(GECODE)/build && ../configure
+	cd $(GECODE)/build && make -j8
+	cd $(GECODE)/build && sudo make install
+
 minizinc:
-	cd ~/Downloads
 	wget https://github.com/MiniZinc/MiniZincIDE/releases/download/2.5.1/MiniZincIDE-2.5.1-bundle-linux-x86_64.tgz -P ~/Downloads/
 	tar -xvzf ~/Downloads/MiniZincIDE-2.5.1-bundle-linux-x86_64.tgz -C ~/Programs
 	# still need to add the following to .bashrc
